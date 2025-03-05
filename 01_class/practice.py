@@ -1,17 +1,19 @@
-class Rectangle():
-    def __init__(self, length, width):
-        self.length = length
-        self.width = width
+class Student():
+    def __init__(self,name):
+        self._name = name
+        self.__grade = []
     
-    def area(self):
-        print(f"Area: {self.length * self.width}")
+    def add_grade(self, grade):
+        self.__grade.append(grade)
     
-    def perimeter(self):
-        print(f"Perimeter: {2 * (self.length + self.width)}")
-    
-    def all_values(self):
-        self.area()
-        self.perimeter()
+    def get_average(self):
+        average = sum(self.__grade) / len(self.__grade)
+        return average
 
-r1 = Rectangle(10,5)
-r1.all_values()
+a = Student("Sanjay")
+a.add_grade(50)
+a.add_grade(100)
+a.add_grade(50)
+a.add_grade(100)
+
+print(a.get_average())
